@@ -28,7 +28,7 @@ class ProductController extends Controller {
 			$res = $this->product->delete($id);
 			$response['res'] = $res;
 			$response['success'] = TRUE;
-			$response['message'] = "Successful delete";
+			$response['message'] = "Eliminación Exitosa";
 			return json_encode($response);
 		} catch (Exception $e)
 		{
@@ -51,7 +51,7 @@ class ProductController extends Controller {
 			$update['stock'] = $json->stock;
 			$res = $this->product->update($id, $update);
 			$response['success'] = TRUE;
-			$response['message'] = "Successful update";
+			$response['message'] = "Actualización exitosa";
 			return json_encode($response);
 		} catch (Exception $e)
 		{
@@ -70,11 +70,11 @@ class ProductController extends Controller {
 			{
 				$response['data'] = $data;
 				$response['success'] = TRUE;
-				$response['message'] = "Successful load";
+				$response['message'] = "Carga exitosa";
 			} else
 			{
 				$response['success'] = FALSE;
-				$response['message'] = "Not found data";
+				$response['message'] = "No se encontraron datos";
 			}
 			return json_encode($response);
 		} catch (Exception $e)
@@ -92,7 +92,7 @@ class ProductController extends Controller {
 			$data = $this->product->findAll();
 			$response['data'] = $data;
 			$response['success'] = TRUE;
-			$response['message'] = "Successful load";
+			$response['message'] = "Carga exitosa";
 			return json_encode($response);
 		} catch (Exception $e)
 		{
@@ -116,7 +116,7 @@ class ProductController extends Controller {
 			$insert['stock'] = $json->stock;
 			$res = $this->product->insert($insert);
 			$response['success'] = TRUE;
-			$response['message'] = "Successful save";
+			$response['message'] = "Guardado exitoso";
 			return json_encode($response);
 		} catch (Exception $e)
 		{

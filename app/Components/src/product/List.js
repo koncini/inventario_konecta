@@ -21,6 +21,26 @@ export default class List extends Component {
       });
   }
 
+  onClickDelete (i, id) {
+    var yes = confirm('¿Realmente desea eliminar este item?');
+    if (yes === true) {
+      const urlDelete = 'http://localhost:8083/inventario_konecta/public/api/product/delete/' + id;
+      axios.delete(urlDelete)
+        .then((response) => {
+          const res = response.data;
+          if (res.success) {
+            alert(res.message);
+            const list = this.state.listProduct;
+            list.splice(i, 1);
+            this.setState({ listProduct: list });
+          }
+        })
+        .catch(error => {
+          alert('Error ==> ' + error);
+        });
+    }
+  }
+
   render () {
     return (
       <section>
@@ -39,7 +59,7 @@ export default class List extends Component {
           </tr>
           </thead>
           <tbody>
-          {this.state.listProduct.map((data) => {
+          {this.state.listProduct.map((data, i) => {
             return (
               <tr>
                 <th scope="row">{data.id}</th>
@@ -57,9 +77,8 @@ export default class List extends Component {
                   >
                     Editar
                   </Link>
-                  <a href="#" class="btn btn-danger">
-                    {' '}
-                    Borrar{' '}
+                  <a onClick={() => this.onClickDelete(i, data.id)} href="#" class="btn btn-danger">
+                    Borrar
                   </a>
                 </td>
               </tr>
