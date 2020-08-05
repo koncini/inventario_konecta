@@ -15,16 +15,18 @@ export default class Form extends Component {
   }
 
   onClickSave() {
-    const baseUrl = "http://localhost:8083/api/product/create";
+    const baseUrl = "http://localhost:8083/inventario_konecta/public/api/product/create";
 
     const datapost = {
-      nombre: this.state.fieldName,
+      nombre: this.state.fieldNombre,
       referencia: this.state.fieldReferencia,
       precio: this.state.fieldPrecio,
       peso: this.state.fieldPeso,
       categoria: this.state.fieldCategoria,
       stock: this.state.fieldStock,
     };
+
+    console.log(datapost);
 
     axios
       .post(baseUrl, datapost)

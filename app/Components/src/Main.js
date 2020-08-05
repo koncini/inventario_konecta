@@ -15,9 +15,9 @@ export default class Main extends Component {
         <main>
           <Nav />
           <Switch>
-            <Route path="/product/index" exact component={List} />
-            <Route path="/product/edit/:id" component={Edit} />
-            <Route path="/product/form" component={Form} />
+            <Route path="/inventario_konecta/public/product/index" exact component={List} />
+            <Route path="/inventario_konecta/public/product/edit/:id" component={Edit} />
+            <Route path="/inventario_konecta/public/product/form" component={Form} />
           </Switch>
         </main>
       </Router>
