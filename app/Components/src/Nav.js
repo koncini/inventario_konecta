@@ -17,11 +17,6 @@ export default class Nav extends Component {
                 Crear
               </Link>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/inventario_konecta/public/product/edit/5">
-                Editar
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>

@@ -17,8 +17,8 @@ export default class Edit extends Component {
   }
 
   onClickUpdate () {
-    const id = this.state.id;
-    const baseUrl = 'http://localhost:8083/inventario_konecta/public/api/product/update/' + id;
+    const productId = this.state.id;
+    const baseUrl = 'http://localhost:8083/inventario_konecta/public/api/product/update/' + productId;
 
     const datapost = {
       nombre: this.state.fieldNombre,
@@ -39,8 +39,8 @@ export default class Edit extends Component {
   }
 
   componentDidMount () {
-    let userId = this.props.match.params.id;
-    axios.get('http://localhost:8083/inventario_konecta/public/api/product/get/' + userId)
+    let productId = this.props.match.params.id;
+    axios.get('http://localhost:8083/inventario_konecta/public/api/product/get/' + productId)
       .then(response => {
         const res = response.data;
         if (res.success) {
@@ -63,12 +63,12 @@ export default class Edit extends Component {
   }
 
   render () {
-    let userId = this.props.match.params.id;
+    let productId = this.props.match.params.id;
 
     return (
       <div class="container">
         <div>
-          <h4>Editar producto {userId} </h4>
+          <h4>Editar producto {productId} </h4>
           <hr/>
           <div class="row">
             <div class="col-md-6 mb-3">

@@ -48,6 +48,7 @@ export default class Form extends Component {
               <input
                 type="text"
                 class="form-control"
+                placeholder="Carro"
                 value={this.state.fieldNombre}
                 onChange={(value) =>
                   this.setState({ fieldNombre: value.target.value })
@@ -62,6 +63,7 @@ export default class Form extends Component {
               <input
                 type="text"
                 class="form-control"
+                placeholder="Aveo Family"
                 value={this.state.fieldreferencia}
                 onChange={(value) =>
                   this.setState({ fieldReferencia: value.target.value })
@@ -76,6 +78,7 @@ export default class Form extends Component {
               <input
                 type="number"
                 class="form-control"
+                placeholder="1000000"
                 value={this.state.fieldPrecio}
                 onChange={(value) =>
                   this.setState({ fieldPrecio: value.target.value })
@@ -90,6 +93,7 @@ export default class Form extends Component {
               <input
                 type="text"
                 class="form-control"
+                placeholder="700 kg"
                 value={this.state.fieldPeso}
                 onChange={(value) =>
                   this.setState({ fieldPeso: value.target.value })
@@ -104,6 +108,7 @@ export default class Form extends Component {
               <input
                 type="text"
                 class="form-control"
+                placeholder="Nuevo"
                 value={this.state.fieldCategoria}
                 onChange={(value) =>
                   this.setState({ fieldCategoria: value.target.value })
@@ -118,6 +123,7 @@ export default class Form extends Component {
               <input
                 type="number"
                 class="form-control"
+                placeholder="0"
                 value={this.state.fieldStock}
                 onChange={(value) =>
                   this.setState({ fieldStock: value.target.value })
