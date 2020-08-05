@@ -37,7 +37,7 @@ $routes->get('/product/index', 'ProductController::index');
 $routes->get('/product/form', 'ProductController::index');
 $routes->get('/product/edit/(:num)', 'ProductController::index');
 $routes->get('/api/product/test', 'ProductController::test');
-$routes->get('/api/product/create', 'ProductController::create');
+$routes->post('/api/product/create', 'ProductController::create');
 $routes->get('/api/product/list', 'ProductController::list');
 $routes->get('/api/product/get/(:num)', 'ProductController::get/$1');
 $routes->put('/api/product/update/(:num)','ProductController::update/$1');

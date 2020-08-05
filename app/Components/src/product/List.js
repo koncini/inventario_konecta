@@ -14,9 +14,7 @@ export default class List extends Component {
     axios
       .get('http://localhost:8083/inventario_konecta/public/api/product/list')
       .then(response => {
-        let result = response.data;
-        console.log(result)
-        this.setState({ listProduct: result });
+        this.setState({ listProduct: response.data.data });
       })
       .catch((error) => {
         alert('Error 500 ' + error);
@@ -36,7 +34,7 @@ export default class List extends Component {
             <th scope="col">Peso</th>
             <th scope="col">Categoria</th>
             <th scope="col">Stock</th>
-            <th scope="col">Fecha de creación</th>
+            <th scope="col">Fecha ultima actualizacion</th>
             <th scope="col">Action</th>
           </tr>
           </thead>
@@ -51,7 +49,7 @@ export default class List extends Component {
                 <td>{data.peso}</td>
                 <td>{data.categoria}</td>
                 <td>{data.stock}</td>
-                <td>{data.fecha_creacion}</td>
+                <td>{data.fecha_actualizacion}</td>
                 <td>
                   <Link
                     class="btn btn-outline-info"
