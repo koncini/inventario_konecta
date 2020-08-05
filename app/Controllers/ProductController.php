@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
-use CodeIgniter\Controller;
 use App\Models\ProductModel;
+use CodeIgniter\Controller;
 use Config\Services;
 use Exception;
 

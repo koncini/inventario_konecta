@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Form extends Component {
-  constructor() {
+  constructor () {
     super();
     this.state = {
-      fieldNombre: "",
-      fieldReferencia: "",
-      fieldPrecio: "",
-      fieldPeso: "",
-      fieldCategoria: "",
-      fieldStock: "",
+      fieldNombre: '',
+      fieldReferencia: '',
+      fieldPrecio: '',
+      fieldPeso: '',
+      fieldCategoria: '',
+      fieldStock: '',
     };
   }
 
-  onClickSave() {
-    const baseUrl = "http://localhost:8083/inventario_konecta/public/api/product/create";
+  onClickSave () {
+    const baseUrl = 'http://localhost:8083/inventario_konecta/public/api/product/create';
 
     const datapost = {
       nombre: this.state.fieldNombre,
@@ -26,23 +26,21 @@ export default class Form extends Component {
       stock: this.state.fieldStock,
     };
 
-    console.log(datapost);
-
     axios
       .post(baseUrl, datapost)
-      .then((response) => {
+      .then(response => {
+        console.log(response);
         alert(response.data.message);
-      })
-      .catch((error) => {
-        alert("Error 500 " + error);
-      });
+      }).catch(error => {
+      alert('Error 500 ' + error);
+    });
   }
 
-  render() {
+  render () {
     return (
       <div class="container">
         <h4>Crear Producto</h4>
-        <hr />
+        <hr/>
         <div>
           <div class="row">
             <div class="col-md-6 mb-3">

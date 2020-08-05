@@ -53,7 +53,7 @@ export default class List extends Component {
                 <td>
                   <Link
                     class="btn btn-outline-info"
-                    to={'/product/edit/' + data.id}
+                    to={'/inventario_konecta/public/product/edit/' + data.id}
                   >
                     Editar
                   </Link>
