@@ -13,12 +13,8 @@
 </head>
 
 <body>
-    <div>
-        <h1>
-            <a href="/product">Inventario de productos</a>
-        </h1>
-        <hr>
-        <div id="main-product"></div>
+    <div class="container">
+         <div id="main-product"></div>
     </div>
     <script src="/inventario_konecta/dist/main.js" charset="utf-8"></script>
 </body>
